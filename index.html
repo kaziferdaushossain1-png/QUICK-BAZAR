@@ -3,69 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>কুইক বাজার - দ্রুত ও সহজ কেনাকাটা</title>
+    <title>কুইক বাজার - সব পাবেন এখানে</title>
     <style>
-        body { font-family: 'Arial', sans-serif; margin: 0; background-color: #f0f2f5; text-align: center; color: #1c1e21; }
-        header { background: #ff4757; color: white; padding: 40px 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        .container { max-width: 500px; margin: 20px auto; padding: 15px; }
-        .card { background: white; border-radius: 20px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-bottom: 30px; border: 1px solid #eee; }
-        .product-img { width: 100%; border-radius: 15px; margin-bottom: 15px; }
-        .price { color: #2ed573; font-size: 35px; font-weight: bold; margin: 15px 0; }
+        body { font-family: 'Arial', sans-serif; margin: 0; background-color: #f4f4f4; color: #333; }
+        header { background: #ff4757; color: white; padding: 20px; text-align: center; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .search-bar { padding: 10px; width: 90%; margin: 10px auto; display: block; border-radius: 20px; border: none; }
         
-        /* পেমেন্ট সেকশন */
-        .bkash-box { background: #fff0f3; border: 2px solid #d7011d; border-radius: 15px; padding: 20px; margin: 20px 0; }
-        .safe-no { font-size: 28px; color: #d7011d; font-weight: bold; letter-spacing: 3px; background: white; padding: 10px; border-radius: 10px; display: inline-block; margin: 15px 0; border: 1px solid #ffccd5; }
+        /* প্রোডাক্ট গ্রিড - এক লাইনে ২টা করে মাল */
+        .product-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 10px; max-width: 1000px; margin: auto; }
         
-        /* বড় বড় বাটন */
-        .btn { display: block; width: 100%; padding: 20px; margin: 15px 0; border-radius: 12px; text-decoration: none; font-weight: bold; font-size: 22px; border: none; cursor: pointer; box-sizing: border-box; }
-        .wa-btn { background: #25D366; color: white; }
-        .confirm-btn { background: #d7011d; color: white; }
+        .product-card { background: white; border-radius: 10px; padding: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: center; display: flex; flex-direction: column; justify-content: space-between; }
+        .product-card img { width: 100%; border-radius: 8px; height: 120px; object-fit: cover; background: #eee; }
+        .product-name { font-size: 14px; font-weight: bold; margin: 8px 0; height: 40px; overflow: hidden; }
+        .price { color: #ff4757; font-size: 18px; font-weight: bold; margin-bottom: 10px; }
         
-        input { width: 100%; padding: 15px; margin: 10px 0; border: 1px solid #ccc; border-radius: 10px; font-size: 18px; box-sizing: border-box; }
-        footer { padding: 30px; color: #777; font-size: 16px; background: #fff; border-top: 1px solid #ddd; }
+        /* ছোট ছোট বাটন */
+        .buy-btn { background: #25D366; color: white; text-decoration: none; padding: 8px; border-radius: 5px; font-size: 12px; font-weight: bold; margin-top: 5px; }
+        .bkash-btn { background: #d7011d; color: white; text-decoration: none; padding: 8px; border-radius: 5px; font-size: 12px; font-weight: bold; margin-top: 5px; }
+        
+        footer { background: #333; color: white; text-align: center; padding: 20px; margin-top: 20px; }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>কুইক বাজার (Quick Bazar)</h1>
-    <p>হাতের কাছেই সব সমাধান</p>
+    <h1 style="margin:0;">কুইক বাজার 🛒</h1>
+    <input type="text" class="search-bar" placeholder="কি খুঁজছেন? সাবান, লিপস্টিক...">
 </header>
 
-<div class="container">
-    
-    <div class="card">
-        <img src="https://via.placeholder.com/400x300?text=Quick+Bazar+Product" alt="Product" class="product-img">
-        <h2 style="font-size: 30px;">প্রিমিয়াম স্মার্ট ওয়াচ</h2>
-        <p style="font-size: 18px; color: #555;">একদম অরিজিনাল প্রোডাক্ট, দ্রুত ডেলিভারি!</p>
-        <p class="price">৳ ২,৫০০</p>
-
-        <a href="https://wa.me/8801700000000?text=আমি কুইক বাজার থেকে এই ঘড়িটি নিতে চাই" class="btn wa-btn" target="_blank">হোয়াটসঅ্যাপে অর্ডার দিন</a>
-
-        <div style="margin: 30px 0; font-weight: bold; color: #999;">অথবা সরাসরি বিকাশ করুন ⬇️</div>
-
-        <div class="bkash-box">
-            <h3 style="color: #d7011d; margin-top: 0; font-size: 24px;">বিকাশ পার্সোনাল</h3>
-            <p style="font-size: 18px;">টাকা পাঠানোর ডেমো নম্বর:</p>
-            
-            <div class="safe-no">০ ১ ৭ ০ ০ - ০ ০ ০ ০ ০ ০</div>
-            
-            <p><small>টাকা পাঠিয়ে নিচের ফর্মটি পূরণ করুন:</small></p>
-            
-            <form action="https://formspree.io/f/তোর_ইমেইল" method="POST">
-                <input type="text" name="Name" placeholder="আপনার পুরো নাম" required>
-                <input type="text" name="Phone" placeholder="আপনার মোবাইল নম্বর" required>
-                <input type="text" name="TrxID" placeholder="বিকাশ Transaction ID (TrxID)" required>
-                <button type="submit" class="btn confirm-btn">অর্ডার কনফার্ম করুন</button>
-            </form>
-        </div>
+<div class="product-grid" id="shop-items">
     </div>
-
-</div>
 
 <footer>
     <p>&copy; ২০২৬ কুইক বাজার | প্রোপ্রাইটর: কাজী ফেরদৌস</p>
+    <p>আপনার প্রিয় অনলাইন শপ</p>
 </footer>
+
+<script>
+    // ৫০টি মালের লিস্ট (তুই এখানে নাম আর দাম পরে বদলে নিবি)
+    const products = [
+        {name: "দামী লিপস্টিক (ম্যাট)", price: "৩৫০"},
+        {name: "গোল্ডেন কানের দুল", price: "১২০০"},
+        {name: "স্মার্ট ওয়াচ Series 8", price: "২৫০০"},
+        {name: "বডি লোশন (নিভিয়া)", price: "৪৫০"},
+        {name: "সুগন্ধি সাবান (লাক্স)", price: "৬০"},
+        {name: "ছেলেদের চশমা (রে-ব্যান)", price: "৮০০"},
+        {name: "মেয়েদের হাতব্যাগ", price: "১৫০০"},
+        {name: "হেডফোন (ওয়ারলেস)", price: "৯৫০"},
+        {name: "ফেসওয়াশ", price: "৩০০"},
+        {name: "চুলের তেল (প্যারাসুট)", price: "১২০"},
+        // আরও ৪০টি মাল এভাবেই আসবে...
+    ];
+
+    // বাকি ৪০টি স্লট অটোমেটিক তৈরি করার জন্য
+    for(let i=11; i<=50; i++) {
+        products.push({name: "পণ্য নম্বর " + i, price: (100 + i * 10)});
+    }
+
+    const grid = document.getElementById('shop-items');
+    products.forEach(p => {
+        grid.innerHTML += `
+            <div class="product-card">
+                <img src="https://via.placeholder.com/150?text=Quick+Bazar" alt="Product">
+                <div class="product-name">${p.name}</div>
+                <div class="price">৳ ${p.price}</div>
+                <a href="https://wa.me/8801700000000" class="buy-btn">WhatsApp অর্ডার</a>
+                <a href="#" class="bkash-btn">বিকাশ পেমেন্ট</a>
+            </div>
+        `;
+    });
+</script>
 
 </body>
 </html>

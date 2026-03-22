@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>কুইক বাজার | পারফেক্ট ম্যাচ শপ</title>
+    <title>কুইক বাজার | ধামাকা ছবি ও অফার</title>
     <style>
         body { font-family: 'Arial', sans-serif; margin: 0; background-color: #f0f2f5; text-align: center; color: #333; }
         header { background: #ff4757; color: white; padding: 15px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
@@ -13,7 +13,11 @@
         .product-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
         .card { background: white; border-radius: 18px; padding: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.06); border: 1px solid #eee; position: relative; display: flex; flex-direction: column; justify-content: space-between; }
         .discount-badge { position: absolute; top: 12px; left: 12px; background: #ff4757; color: white; padding: 5px 10px; border-radius: 8px; font-size: 12px; font-weight: bold; z-index: 10; }
-        .card img { width: 100%; border-radius: 12px; height: 160px; object-fit: cover; background: #f0f0f0; margin-bottom: 10px; }
+        
+        /* ছবির জন্য ফিক্সড স্টাইল */
+        .img-box { width: 100%; height: 160px; border-radius: 12px; background: #eee; overflow: hidden; margin-bottom: 10px; }
+        .card img { width: 100%; height: 100%; object-fit: cover; }
+        
         .name { font-size: 15px; font-weight: bold; margin-bottom: 8px; height: 38px; overflow: hidden; }
         .old-price { color: #999; text-decoration: line-through; font-size: 14px; margin-right: 6px; }
         .new-price { color: #2ed573; font-size: 22px; font-weight: bold; }
@@ -27,54 +31,42 @@
 
 <header>
     <marquee class="moving-logo" behavior="scroll" direction="left" scrollamount="9">
-        🛒 কুইক বাজার (Quick Bazar) — এখন সব পণ্যের সাথে ছবির ১০০% মিল! — ২০% ডিসকাউন্ট ধামাকা — ১০০০টি পণ্য ছবিসহ লাইভ! —
+        🛒 কুইক বাজার (Quick Bazar) — ১০০০টি ফ্রেশ প্রোডাক্ট ছবিসহ এখন স্টকে! — ২০% ডিসকাউন্ট ধামাকা চলছে! — সরাসরি অর্ডার করুন —
     </marquee>
 </header>
 
-<div class="sub-header">🔥 ছবির সাথে নামের মিল থাকা ১০০০টি পণ্য এখন আপনার সামনে! 🔥</div>
+<div class="sub-header">🔥 গ্যারান্টিড ছবির সাথে ১০০০টি মালের মহাউৎসব! 🔥</div>
 
 <div class="container">
     <div class="product-grid" id="main-shop"></div>
 </div>
 
 <footer>
-    <p>&copy; ২০২৬ কুইক বাজার | ১০০% সঠিক পণ্যের নিশ্চয়তা</p>
+    <p>&copy; ২০২৬ কুইক বাজার | দ্রুত ও সহজ কেনাকাটা</p>
 </footer>
 
 <script>
-    // ক্যাটাগরি এবং তাদের জন্য ফিক্সড কি-ওয়ার্ড (যাতে ছবির সাথে মিল থাকে)
-    const productData = [
-        {name: "লিপস্টিক (Matte)", img: "lipstick"},
-        {name: "স্মার্ট ওয়াচ", img: "smartwatch"},
-        {name: "কানের দুল", img: "earrings"},
-        {name: "বডি লোশন", img: "lotion"},
-        {name: "সানগ্লাস", img: "sunglasses"},
-        {name: "হাতব্যাগ (Ladies)", img: "handbag"},
-        {name: "হেডফোন (Bass)", img: "headphones"},
-        {name: "পাঞ্জাবি (Cotton)", img: "panjabi"},
-        {name: "জুতো (Sneakers)", img: "shoes"},
-        {name: "পারফিউম", img: "perfume"}
-    ];
-
+    const items = ["লিপস্টিক (Matte)", "স্মার্ট ওয়াচ Pro", "কানের দুল (Gold)", "বডি লোশন", "স্টাইলিশ চশমা", "হাতব্যাগ (Premium)", "হেডফোন (Wireless)", "সুতি পাঞ্জাবি", "স্নিকার্স জুতো", "পারফিউম (Oud)"];
     const shop = document.getElementById('main-shop');
     let allProducts = "";
 
     for (let i = 1; i <= 1000; i++) {
-        let current = productData[i % productData.length];
-        let pName = current.name + " - মডেল " + (i + 100);
+        let currentName = items[i % items.length] + " - " + (i + 100);
         
-        // প্রাইস ক্যালকুলেশন (২০% ডিসকাউন্ট)
-        let originalPrice = 600 + (i * 5);
+        // প্রাইস ক্যালকুলেশন
+        let originalPrice = 700 + (i * 5);
         let salePrice = Math.floor(originalPrice * 0.8);
 
-        // আনস্প্ল্যাশ লাইব্রেরি ব্যবহার করে একদম নামের সাথে মিল থাকা ছবি
-        let imgUrl = `https://source.unsplash.com/400x400/?${current.img},product&sig=${i}`;
+        // ১০০০টি আলাদা ও নিশ্চিত ছবি আসার জন্য এই লিঙ্কটি ব্যবহার করছি
+        let imgUrl = `https://picsum.photos/300/300?random=${i}`;
 
         allProducts += `
             <div class="card">
                 <div class="discount-badge">২০% ছাড়</div>
-                <img src="${imgUrl}" alt="${current.name}">
-                <div class="name">${pName}</div>
+                <div class="img-box">
+                    <img src="${imgUrl}" alt="Product Image">
+                </div>
+                <div class="name">${currentName}</div>
                 <div>
                     <span class="old-price">৳${originalPrice}</span>
                     <span class="new-price">৳${salePrice}</span>

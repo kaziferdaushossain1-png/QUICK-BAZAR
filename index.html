@@ -3,50 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>কুইক বাজার - দ্রুত ও সহজ কেনাকাটা</title>
+    <title>কুইক বাজার - ধামাকা ডিসকাউন্ট অফার</title>
     <style>
-        body { font-family: 'Arial', sans-serif; margin: 0; background-color: #f0f2f5; text-align: center; color: #1c1e21; }
-        header { background: #ff4757; color: white; padding: 25px 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        .container { max-width: 1000px; margin: 20px auto; padding: 10px; }
-        .product-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-        .card { background: white; border-radius: 15px; padding: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-        .price { color: #2ed573; font-size: 20px; font-weight: bold; }
-        .btn { display: block; width: 100%; padding: 10px; margin: 5px 0; border-radius: 8px; text-decoration: none; font-weight: bold; border: none; font-size: 14px; cursor: pointer; }
+        body { font-family: 'Arial', sans-serif; margin: 0; background-color: #f0f2f5; text-align: center; color: #333; }
+        header { background: #ff4757; color: white; padding: 25px 10px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .offer-banner { background: #333; color: #fbff00; padding: 8px; font-weight: bold; font-size: 16px; letter-spacing: 1px; }
+        
+        .product-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 12px; max-width: 900px; margin: auto; }
+        .card { background: white; border-radius: 15px; padding: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); display: flex; flex-direction: column; border: 1px solid #eee; overflow: hidden; position: relative; }
+        
+        /* ডিসকাউন্ট ব্যাজ */
+        .discount-badge { position: absolute; top: 10px; left: 10px; background: #ff4757; color: white; padding: 4px 8px; border-radius: 5px; font-size: 12px; font-weight: bold; z-index: 10; }
+        
+        .card img { width: 100%; border-radius: 10px; height: 140px; object-fit: cover; background: #f9f9f9; }
+        .product-name { font-size: 14px; font-weight: bold; margin: 10px 0 5px; color: #1c1e21; height: 35px; overflow: hidden; }
+        
+        /* দামের স্টাইল */
+        .old-price { color: #888; text-decoration: line-through; font-size: 14px; margin-right: 5px; }
+        .new-price { color: #2ed573; font-size: 20px; font-weight: bold; }
+        
+        .btn { display: block; width: 100%; padding: 12px; margin: 5px 0; border-radius: 10px; text-decoration: none; font-weight: bold; font-size: 14px; border: none; cursor: pointer; }
         .wa-btn { background: #25D366; color: white; }
         .bk-btn { background: #d7011d; color: white; }
-        footer { padding: 20px; color: #777; background: #fff; border-top: 1px solid #ddd; margin-top: 30px; }
+        footer { padding: 40px; color: #777; background: white; border-top: 1px solid #ddd; margin-top: 30px; }
     </style>
 </head>
 <body>
 
 <header>
-    <h1 style="margin:0;">🛒 কুইক বাজার (Quick Bazar)</h1>
-    <p style="margin:5px 0 0;">আপনার বিশ্বস্ত অনলাইন শপ</p>
+    <h1 style="margin:0; font-size: 30px;">🛒 কুইক বাজার</h1>
+    <p style="margin:5px 0 0;">সব পণ্যে সরাসরি ২০% ছাড়!</p>
 </header>
 
-<div class="container">
-    <div class="product-grid">
-        <div class="card">
-            <img src="https://via.placeholder.com/150" alt="Product" style="width:100%; border-radius:10px;">
-            <h3>প্রিমিয়াম লিপস্টিক</h3>
-            <p class="price">৳ ৩৫০</p>
-            <a href="https://wa.me/8801700000000" class="btn wa-btn">WhatsApp অর্ডার</a>
-            <button class="btn bk-btn">বিকাশ পেমেন্ট</button>
-        </div>
-        
-        <div class="card">
-            <img src="https://via.placeholder.com/150" alt="Product" style="width:100%; border-radius:10px;">
-            <h3>স্মার্ট ওয়াচ</h3>
-            <p class="price">৳ ২,৫০০</p>
-            <a href="https://wa.me/8801700000000" class="btn wa-btn">WhatsApp অর্ডার</a>
-            <button class="btn bk-btn">বিকাশ পেমেন্ট</button>
-        </div>
+<div class="offer-banner">🔥 সীমিত সময়ের অফার: সকল পণ্যে ২০% ডিসকাউন্ট চলছে! 🔥</div>
+
+<div class="product-grid" id="mega-shop">
     </div>
-</div>
 
 <footer>
     <p>&copy; ২০২৬ কুইক বাজার | সর্বস্বত্ব সংরক্ষিত</p>
 </footer>
+
+<script>
+    const categories = ["লিপস্টিক", "কানের দুল", "স্মার্ট ওয়াচ", "বডি লোশন", "সুগন্ধি সাবান", "সানগ্লাস", "হাতব্যাগ", "হেডফোন", "ফেসওয়াশ", "চুলের তেল", "শাড়ি", "পাঞ্জাবি", "জুতো", "পারফিউম"];
+    const shop = document.getElementById('mega-shop');
+
+    let htmlContent = "";
+    for (let i = 1; i <= 1000; i++) {
+        let name = categories[i % categories.length] + " - মডেল " + (200 + i);
+        
+        // আসল দাম হিসাব (উদাহরণস্বরূপ ৫০০ থেকে শুরু)
+        let originalPrice = 500 + (i * 10);
+        
+        // ২০% ডিসকাউন্ট হিসাব
+        let discount = (originalPrice * 20) / 100;
+        let finalPrice = originalPrice - discount;
+        
+        htmlContent += `
+            <div class="card">
+                <div class="discount-badge">২০% ছাড়</div>
+                <img src="https://via.placeholder.com/200?text=Quick+Bazar+${i}" alt="Product">
+                <div class="product-name">${name}</div>
+                <div>
+                    <span class="old-price">৳${originalPrice.toLocaleString()}</span>
+                    <span class="new-price">৳${finalPrice.toLocaleString()}</span>
+                </div>
+                <a href="https://wa.me/8801700000000" class="btn wa-btn">WhatsApp অর্ডার</a>
+                <button class="btn bk-btn" onclick="alert('বিকাশ পেমেন্ট গেটওয়ে লোড হচ্ছে...')">বিকাশ পেমেন্ট</button>
+            </div>
+        `;
+    }
+    shop.innerHTML = htmlContent;
+</script>
 
 </body>
 </html>

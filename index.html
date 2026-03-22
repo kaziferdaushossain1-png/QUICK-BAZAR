@@ -3,91 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>কুইক বাজার | ছবিসহ ১০০০+ পণ্য ও ধামাকা অফার</title>
+    <title>কুইক বাজার | পারফেক্ট ম্যাচ শপ</title>
     <style>
-        body { font-family: 'Arial', sans-serif; margin: 0; background-color: #f0f2f5; text-align: center; color: #333; overflow-x: hidden; }
-        
-        /* চলন্ত লোগো ও হেডার */
+        body { font-family: 'Arial', sans-serif; margin: 0; background-color: #f0f2f5; text-align: center; color: #333; }
         header { background: #ff4757; color: white; padding: 15px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
         .moving-logo { font-size: 26px; font-weight: bold; white-space: nowrap; margin: 0; }
-        
-        .sub-header { background: #333; color: #fbff00; padding: 8px; font-size: 15px; font-weight: bold; text-align: center; letter-spacing: 1px; }
-
-        /* প্রোডাক্ট গ্রিড - মোবাইলে ২টা করে */
+        .sub-header { background: #333; color: #fbff00; padding: 8px; font-size: 15px; font-weight: bold; }
         .container { max-width: 1000px; margin: auto; padding: 12px; }
         .product-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-        
-        /* প্রোডাক্ট কার্ড ডিজাইন */
-        .card { background: white; border-radius: 18px; padding: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.06); border: 1px solid #eee; position: relative; text-align: center; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s; }
-        .card:hover { transform: translateY(-5px); }
-        
-        /* ডিসকাউন্ট ব্যাজ */
-        .discount-badge { position: absolute; top: 12px; left: 12px; background: #ff4757; color: white; padding: 5px 10px; border-radius: 8px; font-size: 12px; font-weight: bold; z-index: 10; box-shadow: 0 2px 5px rgba(255,71,87,0.4); }
-        
-        /* ছবির স্টাইল - আসল ১০০০ ছবি এখানে আসবে */
+        .card { background: white; border-radius: 18px; padding: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.06); border: 1px solid #eee; position: relative; display: flex; flex-direction: column; justify-content: space-between; }
+        .discount-badge { position: absolute; top: 12px; left: 12px; background: #ff4757; color: white; padding: 5px 10px; border-radius: 8px; font-size: 12px; font-weight: bold; z-index: 10; }
         .card img { width: 100%; border-radius: 12px; height: 160px; object-fit: cover; background: #f0f0f0; margin-bottom: 10px; }
-        
-        .name { font-size: 15px; font-weight: bold; margin-bottom: 8px; color: #1c1e21; height: 38px; overflow: hidden; }
-        
-        /* দামের স্টাইল */
-        .price-box { margin-bottom: 15px; }
+        .name { font-size: 15px; font-weight: bold; margin-bottom: 8px; height: 38px; overflow: hidden; }
         .old-price { color: #999; text-decoration: line-through; font-size: 14px; margin-right: 6px; }
         .new-price { color: #2ed573; font-size: 22px; font-weight: bold; }
-        
-        /* বাটন */
-        .btn { display: block; width: 100%; padding: 12px; margin: 5px 0; border-radius: 10px; text-decoration: none; font-weight: bold; font-size: 14px; border: none; cursor: pointer; box-sizing: border-box; }
-        .wa-btn { background: #25D366; color: white; display: flex; align-items: center; justify-content: center; gap: 8px; }
+        .btn { display: block; width: 100%; padding: 12px; margin: 5px 0; border-radius: 10px; text-decoration: none; font-weight: bold; font-size: 14px; cursor: pointer; border: none; }
+        .wa-btn { background: #25D366; color: white; }
         .bk-btn { background: #d7011d; color: white; }
-        
-        footer { padding: 40px; background: white; border-top: 1px solid #ddd; margin-top: 40px; font-size: 14px; color: #777; }
+        footer { padding: 40px; background: white; border-top: 1px solid #ddd; margin-top: 40px; color: #777; }
     </style>
 </head>
 <body>
 
 <header>
     <marquee class="moving-logo" behavior="scroll" direction="left" scrollamount="9">
-        🛒 কুইক বাজার (Quick Bazar) — দ্রুত ডেলিভারি — ১০০০+ পণ্য ছবিসহ এখন স্টকে — সব পণ্যে ২০% সরাসরি ছাড়! — সরাসরি অর্ডার করুন — আপনার বিশ্বস্ত অনলাইন শপ —
+        🛒 কুইক বাজার (Quick Bazar) — এখন সব পণ্যের সাথে ছবির ১০০% মিল! — ২০% ডিসকাউন্ট ধামাকা — ১০০০টি পণ্য ছবিসহ লাইভ! —
     </marquee>
 </header>
 
-<div class="sub-header">🔥 ধামাকা সেল চলছে! প্রতিটি অর্ডারে নিশ্চিত উপহার! 🔥</div>
+<div class="sub-header">🔥 ছবির সাথে নামের মিল থাকা ১০০০টি পণ্য এখন আপনার সামনে! 🔥</div>
 
 <div class="container">
-    <div class="product-grid" id="main-shop">
-        </div>
+    <div class="product-grid" id="main-shop"></div>
 </div>
 
 <footer>
-    <p>&copy; ২০২৬ কুইক বাজার | বাংলাদেশের বৃহত্তম অনলাইন শপ | সর্বস্বত্ব সংরক্ষিত</p>
+    <p>&copy; ২০২৬ কুইক বাজার | ১০০% সঠিক পণ্যের নিশ্চয়তা</p>
 </footer>
 
 <script>
-    const items = ["লিপস্টিক", "কানের দুল", "স্মার্ট ওয়াচ", "বডি লোশন", "সুগন্ধি সাবান", "সানগ্লাস", "হাতব্যাগ", "হেডফোন", "ফেসওয়াশ", "চুলের তেল", "শাড়ি", "পাঞ্জাবি", "জুতো", "পারফিউম"];
+    // ক্যাটাগরি এবং তাদের জন্য ফিক্সড কি-ওয়ার্ড (যাতে ছবির সাথে মিল থাকে)
+    const productData = [
+        {name: "লিপস্টিক (Matte)", img: "lipstick"},
+        {name: "স্মার্ট ওয়াচ", img: "smartwatch"},
+        {name: "কানের দুল", img: "earrings"},
+        {name: "বডি লোশন", img: "lotion"},
+        {name: "সানগ্লাস", img: "sunglasses"},
+        {name: "হাতব্যাগ (Ladies)", img: "handbag"},
+        {name: "হেডফোন (Bass)", img: "headphones"},
+        {name: "পাঞ্জাবি (Cotton)", img: "panjabi"},
+        {name: "জুতো (Sneakers)", img: "shoes"},
+        {name: "পারফিউম", img: "perfume"}
+    ];
+
     const shop = document.getElementById('main-shop');
-
     let allProducts = "";
-    for (let i = 1; i <= 1000; i++) {
-        let pName = items[i % items.length] + " - মডেল " + (i + 50);
-        
-        // প্রাইস ক্যালকুলেশন (২০% ডিসকাউন্টসহ)
-        let originalPrice = 500 + (i * 10);
-        let discount = (originalPrice * 20) / 100;
-        let salePrice = originalPrice - discount;
 
-        // ছবির জন্য ইন্টারনেটের ফ্রি ডাটাবেস ব্যবহার করা (১০০০ ভিন্ন ছবি)
-        let imgUrl = "https://picsum.photos/200/200?random=" + i;
+    for (let i = 1; i <= 1000; i++) {
+        let current = productData[i % productData.length];
+        let pName = current.name + " - মডেল " + (i + 100);
+        
+        // প্রাইস ক্যালকুলেশন (২০% ডিসকাউন্ট)
+        let originalPrice = 600 + (i * 5);
+        let salePrice = Math.floor(originalPrice * 0.8);
+
+        // আনস্প্ল্যাশ লাইব্রেরি ব্যবহার করে একদম নামের সাথে মিল থাকা ছবি
+        let imgUrl = `https://source.unsplash.com/400x400/?${current.img},product&sig=${i}`;
 
         allProducts += `
             <div class="card">
                 <div class="discount-badge">২০% ছাড়</div>
-                <img src="${imgUrl}" alt="Product">
+                <img src="${imgUrl}" alt="${current.name}">
                 <div class="name">${pName}</div>
-                <div class="price-box">
-                    <span class="old-price">৳${originalPrice.toLocaleString()}</span>
-                    <span class="new-price">৳${salePrice.toLocaleString()}</span>
+                <div>
+                    <span class="old-price">৳${originalPrice}</span>
+                    <span class="new-price">৳${salePrice}</span>
                 </div>
                 <a href="https://wa.me/8801700000000" class="btn wa-btn">WhatsApp অর্ডার</a>
-                <button class="btn bk-btn" onclick="alert('বিকাশ পেমেন্ট গেটওয়ে লোড হচ্ছে...')">বিকাশ পেমেন্ট</button>
+                <button class="btn bk-btn">বিকাশ পেমেন্ট</button>
             </div>
         `;
     }
